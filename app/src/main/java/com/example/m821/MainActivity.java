@@ -10,19 +10,23 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    MediaPlayer mp;
+    MediaPlayer mp, mp2;
     Button botonmapa, botonlista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mp2 = MediaPlayer.create(this, R.raw.bzrp);
+        mp2.start();
         //hola
     }
 
     public void btnMapa(View view) {
         mp = MediaPlayer.create(this, R.raw.quevedo);
+        mp2.stop();
         mp.start();
+
         Intent mapa = new Intent(this, MapsActivity.class);
 
         startActivity(mapa);
