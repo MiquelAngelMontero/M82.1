@@ -2,6 +2,7 @@ package com.example.m821;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,6 +44,9 @@ public class Adapter_Llista extends RecyclerView.Adapter<Adapter_Llista.ViewHold
 
         holder.visit.setOnClickListener(new View.OnClickListener() {@Override
         public void onClick(View v) {
+            MediaPlayer mp = MainActivity.getMp();
+            mp.start();
+
             final String website = "https://www.ticketmaster.es/artist/quevedo-entradas/1151453?clickId=W1KRhATExxyNR3CzNTQzc24XUkAU3PXVGWFn0g0&irgwc=1&utm_source=1313006-Wake%20And%20Listen&utm_medium=affiliate&utm_campaign=1313006";
             Log.i("Location , ", website);
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(website));

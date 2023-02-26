@@ -10,7 +10,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    MediaPlayer mp, mp2;
+    static MediaPlayer mp;
+    MediaPlayer mp2;
     Button botonmapa, botonlista;
 
     @Override
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnMapa(View view) {
         mp = MediaPlayer.create(this, R.raw.quevedo);
-        mp2.stop();
         mp.start();
 
         Intent mapa = new Intent(this, MapsActivity.class);
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(llista);
     }
 
-
-
+    public static MediaPlayer getMp() {
+        return mp;
+    }
 }
