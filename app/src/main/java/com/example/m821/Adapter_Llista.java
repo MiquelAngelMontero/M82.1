@@ -22,6 +22,8 @@ public class Adapter_Llista extends RecyclerView.Adapter<Adapter_Llista.ViewHold
     ArrayList<Concert> llistaConcerts;
     private Context context;
 
+    //Constructor
+
     public Adapter_Llista(ArrayList<Concert> llistaConcerts, Context context) {
         this.llistaConcerts = llistaConcerts;
         this.context = context;
@@ -29,6 +31,9 @@ public class Adapter_Llista extends RecyclerView.Adapter<Adapter_Llista.ViewHold
 
     @NonNull
     @Override
+
+    //Declarem el XML associat
+
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.concert_item, parent, false);
         return new ViewHolder(v);
@@ -38,6 +43,8 @@ public class Adapter_Llista extends RecyclerView.Adapter<Adapter_Llista.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Concert concert = llistaConcerts.get(position);
 
+        //Assignem cada caracteristíca del concert amb els espais del Adapter
+
         holder.lloc.setText(concert.getLloc());
         holder.data.setText(concert.getData());
         holder.sitio.setText(concert.getSitio());
@@ -46,6 +53,8 @@ public class Adapter_Llista extends RecyclerView.Adapter<Adapter_Llista.ViewHold
         public void onClick(View v) {
             MediaPlayer mp = MainActivity.getMp();
             mp.start();
+
+            //Link per anar al lloc de venta de les entrades
 
             final String website = "https://www.ticketmaster.es/artist/quevedo-entradas/1151453?clickId=W1KRhATExxyNR3CzNTQzc24XUkAU3PXVGWFn0g0&irgwc=1&utm_source=1313006-Wake%20And%20Listen&utm_medium=affiliate&utm_campaign=1313006";
             Log.i("Location , ", website);

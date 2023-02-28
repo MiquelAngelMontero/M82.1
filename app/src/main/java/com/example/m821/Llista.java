@@ -15,6 +15,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+//Llista final dels concerts
+
 public class Llista extends AppCompatActivity {
 
    RecyclerView rvllistaConcerts;
@@ -32,6 +34,8 @@ public class Llista extends AppCompatActivity {
 
        concerts = new ArrayList<>();
 
+       //Creem els concerts
+
        Concert concert1 = new Concert("Gran Canaria","11/3/2023", "Gran Canaria Arena");
        concerts.add(concert1);
        Concert concert2 = new Concert("Madrid","5/5/2023", "WiZink Center");
@@ -44,6 +48,8 @@ public class Llista extends AppCompatActivity {
         concerts.add(concert5);
         Concert concert6 = new Concert("Bilbao","7/10/2023", "BEC!");
         concerts.add(concert6);
+
+        // I els dissenyem gràcies al adapter que hem fet.
 
        adapter = new Adapter_Llista(concerts, this);
        rvllistaConcerts.setAdapter(adapter);

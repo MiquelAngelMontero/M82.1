@@ -22,12 +22,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(this); //Creem el mapa de Google juntament amb la API que li hem assignat
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        // Assignem els markers al mapa d'on el nostre artista té els concerts
 
         LatLng GCArena = new LatLng(28.102907, -15.456285);   
         mMap.addMarker(new MarkerOptions().position(GCArena).title("Gran Canaria Arena").icon(BitmapDescriptorFactory.fromResource(R.drawable.quevedomarker))); //Personalitzacio del marcador
